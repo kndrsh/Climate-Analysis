@@ -62,7 +62,32 @@ def precipitation():
         all_prcp.append(prcp_dict)
 
     return jsonify(all_prcp)
-    
+ 
+@app.route("/api/v1.0/tobs")
+def tobs():
+    # Create our session link to the database
+    session = Session(engine)
+
+    """Return a list of all TOBs"""
+    # Query all tobs
+
+    results = session.query(Measurement.date,  Measurement.tobs,Measurement.prcp).\
+                filter(Measurement.date >= '2016-08-23').\
+                filter(Measurement.station=='USC00519281').\
+                order_by(Measurement.date).all()
+
+    session.close()
+   # Convert the list to Dictionary
+    all_tobs = []
+    for prcp, date,tobs in results:
+        tobs_dict = {}
+        tobs_dict["prcp"] = prcp
+        tobs_dict["date"] = date
+        tobs_dict["tobs"] = tobs
+        
+        all_tobs.append(tobs_dict)
+
+    return jsonify(all_tobs)
 @app.route("/api/v1.0/stations")
 def stations():
     # Create our session (link) from Python to the DB
