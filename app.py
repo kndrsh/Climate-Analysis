@@ -44,7 +44,7 @@ def precipitation():
     # Create our session link to the database
     session = Session(engine)
 
-    """Return a list of all Precipitation Data"""
+   #Return a list of all Precipitation Data
     # Query all Precipitation
     results = session.query(Measurement.date, Measurement.prcp).\
         filter(Measurement.date >= "2016-08-24").\
@@ -68,7 +68,7 @@ def tobs():
     # Create our session link to the database
     session = Session(engine)
 
-    """Return a list of all TOBs"""
+   #Return a list of all TOBs
     # Query all tobs
 
     results = session.query(Measurement.date,  Measurement.tobs,Measurement.prcp).\
@@ -93,7 +93,7 @@ def stations():
     # Create our session link to the database
     session = Session(engine)
 
-    """Return a list of all Stations"""
+    #Return a list of all Stations
     # Query all Stations
     results = session.query(Station.station).\
                  order_by(Station.station).all()
