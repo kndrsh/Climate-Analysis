@@ -1,6 +1,5 @@
 
 
-![surfs-up.png](Images/surfs-up.png)
 
 This project used Pthyon and SQLAlchemy to examine climate data and explore the climate Database in Hawaii. 
 This assignment used a SQLite database to extract data on weather measurements at weather stations in Hawaii. The data was first explored to find any interesting insights, using SQLAlchemy to query the database.
