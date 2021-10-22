@@ -4,7 +4,7 @@
 This project used Pthyon and SQLAlchemy to examine climate data and explore the climate Database in Hawaii. 
 I used a SQLite database to extract data on weather measurements at weather stations in Hawaii. The data was first explored to find any interesting insights, using SQLAlchemy to query the database.
 
- I retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. 
+ I retrieved the last 12 months of precipitation data by querying the 12 preceding months of data. 
 
 * Selected only the `date` and `prcp` values.
 
